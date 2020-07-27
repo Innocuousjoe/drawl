@@ -68,8 +68,8 @@
                                             <action selector="colorSelected:" destination="Mcb-Ag-vR1" eventType="touchUpInside" id="kBQ-oj-Xkz"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose brush color:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAW-Vc-0Ro">
-                                        <rect key="frame" x="80.5" y="10" width="200.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brush color:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAW-Vc-0Ro">
+                                        <rect key="frame" x="10" y="10" width="394" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -82,37 +82,66 @@
                                             <action selector="colorSelected:" destination="Mcb-Ag-vR1" eventType="touchUpInside" id="OGF-ai-Cvb"/>
                                         </connections>
                                     </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="1" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Gq-nR-Ur9">
+                                        <rect key="frame" x="8" y="128" width="338" height="31"/>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="Mcb-Ag-vR1" eventType="valueChanged" id="eLg-zJ-gbE"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brush size:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBI-3d-w8Z">
+                                        <rect key="frame" x="10" y="97" width="394" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNk-YT-wLt">
+                                        <rect key="frame" x="354" y="132.5" width="50" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="HhT-4s-tAa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="08f-6x-hhm" firstAttribute="top" secondItem="qAW-Vc-0Ro" secondAttribute="bottom" constant="10" id="06P-5n-VFV"/>
-                                    <constraint firstItem="qAW-Vc-0Ro" firstAttribute="leading" secondItem="08f-6x-hhm" secondAttribute="trailing" constant="10" id="0Tv-u7-10e"/>
                                     <constraint firstItem="PVT-8k-Ben" firstAttribute="leading" secondItem="EBm-Ho-GX9" secondAttribute="trailing" constant="10" id="4Ep-eG-tuy"/>
                                     <constraint firstItem="IpN-Ur-xIt" firstAttribute="top" secondItem="08f-6x-hhm" secondAttribute="top" id="7ZR-F4-oC3"/>
+                                    <constraint firstItem="gBI-3d-w8Z" firstAttribute="top" secondItem="08f-6x-hhm" secondAttribute="bottom" constant="20.5" id="8zS-oh-Sbt"/>
                                     <constraint firstItem="08f-6x-hhm" firstAttribute="leading" secondItem="JGI-C4-beY" secondAttribute="leading" constant="28" id="9Kf-n6-5do"/>
                                     <constraint firstItem="MJn-xs-VnE" firstAttribute="top" secondItem="ISs-Fp-dpj" secondAttribute="top" id="9SJ-bu-CiN"/>
                                     <constraint firstItem="STH-tx-aCs" firstAttribute="top" secondItem="PVT-8k-Ben" secondAttribute="top" id="9gZ-j9-xuF"/>
                                     <constraint firstItem="ISs-Fp-dpj" firstAttribute="leading" secondItem="STH-tx-aCs" secondAttribute="trailing" constant="10" id="A47-aS-Wu1"/>
                                     <constraint firstItem="MJn-xs-VnE" firstAttribute="width" secondItem="ISs-Fp-dpj" secondAttribute="width" id="AyU-se-jk0"/>
+                                    <constraint firstItem="QNk-YT-wLt" firstAttribute="centerY" secondItem="9Gq-nR-Ur9" secondAttribute="centerY" id="Cd1-BO-Y97"/>
                                     <constraint firstItem="EBm-Ho-GX9" firstAttribute="top" secondItem="IpN-Ur-xIt" secondAttribute="top" id="JKl-fL-kZt"/>
+                                    <constraint firstItem="9Gq-nR-Ur9" firstAttribute="leading" secondItem="JGI-C4-beY" secondAttribute="leading" constant="10" id="Mfa-3E-hdn"/>
                                     <constraint firstAttribute="trailing" secondItem="MJn-xs-VnE" secondAttribute="trailing" constant="28" id="Nff-Zp-nlH"/>
                                     <constraint firstItem="qAW-Vc-0Ro" firstAttribute="top" secondItem="JGI-C4-beY" secondAttribute="top" constant="10" id="Oty-fI-qgu"/>
                                     <constraint firstItem="IpN-Ur-xIt" firstAttribute="height" secondItem="JGI-C4-beY" secondAttribute="height" multiplier="0.2" id="PKb-uq-8Go"/>
                                     <constraint firstItem="EBm-Ho-GX9" firstAttribute="width" secondItem="IpN-Ur-xIt" secondAttribute="width" id="SA7-Ve-sIU"/>
                                     <constraint firstItem="MJn-xs-VnE" firstAttribute="height" secondItem="JGI-C4-beY" secondAttribute="height" multiplier="0.2" id="Sxx-Vk-2w4"/>
                                     <constraint firstItem="STH-tx-aCs" firstAttribute="leading" secondItem="PVT-8k-Ben" secondAttribute="trailing" constant="10" id="T51-o0-G3I"/>
-                                    <constraint firstItem="ISs-Fp-dpj" firstAttribute="leading" secondItem="qAW-Vc-0Ro" secondAttribute="trailing" constant="10" id="T76-KX-sjx"/>
                                     <constraint firstItem="STH-tx-aCs" firstAttribute="width" secondItem="PVT-8k-Ben" secondAttribute="width" id="TTg-J3-nZ5"/>
+                                    <constraint firstItem="qAW-Vc-0Ro" firstAttribute="leading" secondItem="JGI-C4-beY" secondAttribute="leading" constant="10" id="UzZ-Qm-CZV"/>
                                     <constraint firstItem="08f-6x-hhm" firstAttribute="height" secondItem="JGI-C4-beY" secondAttribute="height" multiplier="0.2" id="VfO-oT-DWj"/>
+                                    <constraint firstItem="gBI-3d-w8Z" firstAttribute="leading" secondItem="JGI-C4-beY" secondAttribute="leading" constant="10" id="XzX-HF-nAk"/>
                                     <constraint firstItem="MJn-xs-VnE" firstAttribute="leading" secondItem="ISs-Fp-dpj" secondAttribute="trailing" constant="10" id="Yfk-vM-jca"/>
                                     <constraint firstItem="ISs-Fp-dpj" firstAttribute="top" secondItem="STH-tx-aCs" secondAttribute="top" id="aij-zu-F3d"/>
                                     <constraint firstItem="ISs-Fp-dpj" firstAttribute="height" secondItem="JGI-C4-beY" secondAttribute="height" multiplier="0.2" id="axS-oF-Gr1"/>
+                                    <constraint firstItem="9Gq-nR-Ur9" firstAttribute="top" secondItem="gBI-3d-w8Z" secondAttribute="bottom" constant="10" id="axx-5o-sYt"/>
+                                    <constraint firstAttribute="trailing" secondItem="gBI-3d-w8Z" secondAttribute="trailing" constant="10" id="gC7-ct-lVj"/>
                                     <constraint firstItem="PVT-8k-Ben" firstAttribute="top" secondItem="EBm-Ho-GX9" secondAttribute="top" id="hD4-nC-C22"/>
                                     <constraint firstItem="EBm-Ho-GX9" firstAttribute="height" secondItem="JGI-C4-beY" secondAttribute="height" multiplier="0.2" id="i2T-uJ-QcV"/>
                                     <constraint firstItem="PVT-8k-Ben" firstAttribute="width" secondItem="EBm-Ho-GX9" secondAttribute="width" id="jHI-fZ-lV3"/>
+                                    <constraint firstAttribute="trailing" secondItem="qAW-Vc-0Ro" secondAttribute="trailing" constant="10" id="mXg-12-rtK"/>
                                     <constraint firstItem="ISs-Fp-dpj" firstAttribute="width" secondItem="STH-tx-aCs" secondAttribute="width" id="mfL-G8-myQ"/>
                                     <constraint firstItem="IpN-Ur-xIt" firstAttribute="width" secondItem="08f-6x-hhm" secondAttribute="width" id="ptt-Y3-ea2"/>
+                                    <constraint firstAttribute="trailing" secondItem="QNk-YT-wLt" secondAttribute="trailing" constant="10" id="qar-vp-l5f"/>
                                     <constraint firstItem="EBm-Ho-GX9" firstAttribute="leading" secondItem="IpN-Ur-xIt" secondAttribute="trailing" constant="10" id="rRC-tw-JqQ"/>
+                                    <constraint firstItem="QNk-YT-wLt" firstAttribute="leading" secondItem="9Gq-nR-Ur9" secondAttribute="trailing" constant="10" id="rrz-em-YkZ"/>
                                     <constraint firstItem="STH-tx-aCs" firstAttribute="height" secondItem="JGI-C4-beY" secondAttribute="height" multiplier="0.2" id="s3x-xh-5Kq"/>
                                     <constraint firstItem="PVT-8k-Ben" firstAttribute="height" secondItem="JGI-C4-beY" secondAttribute="height" multiplier="0.2" id="up6-63-NGS"/>
                                     <constraint firstItem="IpN-Ur-xIt" firstAttribute="leading" secondItem="08f-6x-hhm" secondAttribute="trailing" constant="10" id="xbe-6P-GG4"/>
@@ -134,13 +163,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Sketch Pad" id="Z2w-do-Jxb"/>
                     <connections>
+                        <outlet property="brushSizeLabel" destination="QNk-YT-wLt" id="1FB-Ym-rJR"/>
+                        <outlet property="brushSizeSlider" destination="9Gq-nR-Ur9" id="NOJ-0I-D21"/>
                         <outlet property="dockView" destination="JGI-C4-beY" id="aoo-Df-hFB"/>
                         <outlet property="drawingView" destination="Nlb-SS-ND0" id="Bc7-Wm-zAr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fh0-9d-B2L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="519"/>
+            <point key="canvasLocation" x="1010.144927536232" y="518.97321428571422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nzk-8j-19b">
