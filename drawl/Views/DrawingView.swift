@@ -3,6 +3,7 @@ import UIKit
 class DrawingView: UIView {
     var strokeColor: CGColor = UIColor.black.cgColor
     var strokeSize: CGFloat = 5
+    var startTime: Date!
     
     private var lineArray: [[(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]] = [[(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]]()
 
@@ -12,6 +13,9 @@ class DrawingView: UIView {
 
         lineArray.append([(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]())
         lineArray[lineArray.count - 1].append((point: firstPoint, strokeColor: strokeColor, strokeSize: strokeSize))
+        if startTime == nil {
+            startTime = Date()
+        }
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -27,8 +31,6 @@ class DrawingView: UIView {
     }
 
     func draw(inContext context: CGContext) {
-        
-        
         context.setLineCap(.round)
         for line in lineArray {
             guard let firstPoint = line.first else { continue }
@@ -58,7 +60,7 @@ class DrawingView: UIView {
         setNeedsDisplay()
     }
 
-    func exportDrawing() -> UIImage? {
+    func exportDrawing() -> (startTime: Date, image: UIImage, lineArray: [[(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]])? {
         UIGraphicsBeginImageContext(frame.size)
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         
@@ -67,6 +69,10 @@ class DrawingView: UIView {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        if let image = image {
+            return (startTime: startTime, image: image, lineArray: lineArray)
+        } else {
+            return nil
+        }
     }
 }

@@ -2,6 +2,8 @@ import UIKit
 
 class SketchPadViewController: UIViewController {
     
+    private let drawingCache: DrawingCacheProtocol = DrawingCache.shared
+    
     @IBOutlet weak var drawingView: DrawingView!
     @IBOutlet weak var dockView: UIView!
     @IBOutlet weak var brushSizeSlider: UISlider!
@@ -65,28 +67,19 @@ class SketchPadViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        
+        if let tuple = drawingView.exportDrawing() {
+            let start = tuple.startTime
+            let end = Date()
+            let interval = DateInterval(start: start, end: end)
+            let drawing = Drawing(thumbnail: tuple.image, creationDate: Date(), interval: interval, lineArray: tuple.lineArray)
+            
+            drawingCache.add(drawing: drawing)
+            drawingView.resetDrawing()
+        }
     }
     
     @IBAction func reset(_ sender: Any) {
         drawingView.resetDrawing()
-    }
-    
-    //MARK: Touches
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return }
-        let firstPoint = touch.location(in: drawingView)
-
-        lineArray.append([CGPoint]())
-        lineArray[lineArray.count - 1].append(firstPoint)
-    }
-
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return }
-        let currentPoint = touch.location(in: drawingView)
-        
-        lineArray[lineArray.count - 1].append(currentPoint)
-        drawingView.setNeedsDisplay()
     }
     
     //MARK: Helpers

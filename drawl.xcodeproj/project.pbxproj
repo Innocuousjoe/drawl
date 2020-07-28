@@ -17,6 +17,9 @@
 		A657479C24CF3FF1009D036B /* DrawingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657479B24CF3FF1009D036B /* DrawingListTableViewController.swift */; };
 		A657479E24CF425E009D036B /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657479D24CF425E009D036B /* Helpers.swift */; };
 		A65747A024CF43DC009D036B /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657479F24CF43DC009D036B /* DrawingView.swift */; };
+		A65747A624D08EEB009D036B /* DrawingCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65747A524D08EEB009D036B /* DrawingCache.swift */; };
+		A65747A924D08F01009D036B /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65747A824D08F01009D036B /* Drawing.swift */; };
+		A6CFAB4424D09C2F0073F539 /* DrawingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFAB4324D09C2F0073F539 /* DrawingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		A657479B24CF3FF1009D036B /* DrawingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingListTableViewController.swift; sourceTree = "<group>"; };
 		A657479D24CF425E009D036B /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		A657479F24CF43DC009D036B /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		A65747A524D08EEB009D036B /* DrawingCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCache.swift; sourceTree = "<group>"; };
+		A65747A824D08F01009D036B /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		A6CFAB4324D09C2F0073F539 /* DrawingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,8 @@
 		A657477624CF3EEE009D036B /* drawl */ = {
 			isa = PBXGroup;
 			children = (
+				A6CFAB4224D09C240073F539 /* Cells */,
+				A65747A724D08EFC009D036B /* Models */,
 				A65747A424D08EC4009D036B /* Controllers */,
 				A65747A324D08EBD009D036B /* Views */,
 				A65747A224D08EB4009D036B /* Helpers */,
@@ -111,6 +119,7 @@
 		A65747A124D08EAA009D036B /* Caches */ = {
 			isa = PBXGroup;
 			children = (
+				A65747A524D08EEB009D036B /* DrawingCache.swift */,
 			);
 			path = Caches;
 			sourceTree = "<group>";
@@ -138,6 +147,22 @@
 				A657479B24CF3FF1009D036B /* DrawingListTableViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A65747A724D08EFC009D036B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A65747A824D08F01009D036B /* Drawing.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6CFAB4224D09C240073F539 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A6CFAB4324D09C2F0073F539 /* DrawingCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +270,10 @@
 				A657479E24CF425E009D036B /* Helpers.swift in Sources */,
 				A65747A024CF43DC009D036B /* DrawingView.swift in Sources */,
 				A657477824CF3EEE009D036B /* AppDelegate.swift in Sources */,
+				A6CFAB4424D09C2F0073F539 /* DrawingCell.swift in Sources */,
 				A657479A24CF3FDC009D036B /* SketchPadViewController.swift in Sources */,
+				A65747A924D08F01009D036B /* Drawing.swift in Sources */,
+				A65747A624D08EEB009D036B /* DrawingCache.swift in Sources */,
 				A657477A24CF3EEE009D036B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
