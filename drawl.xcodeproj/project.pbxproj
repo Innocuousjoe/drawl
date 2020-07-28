@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A657477824CF3EEE009D036B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657477724CF3EEE009D036B /* AppDelegate.swift */; };
 		A657477A24CF3EEE009D036B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657477924CF3EEE009D036B /* SceneDelegate.swift */; };
-		A657477C24CF3EEE009D036B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657477B24CF3EEE009D036B /* ViewController.swift */; };
 		A657477F24CF3EEE009D036B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A657477D24CF3EEE009D036B /* Main.storyboard */; };
 		A657478124CF3EF1009D036B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A657478024CF3EF1009D036B /* Assets.xcassets */; };
 		A657478424CF3EF1009D036B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A657478224CF3EF1009D036B /* LaunchScreen.storyboard */; };
@@ -34,7 +33,6 @@
 		A657477424CF3EEE009D036B /* drawl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657477724CF3EEE009D036B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A657477924CF3EEE009D036B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A657477B24CF3EEE009D036B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A657477E24CF3EEE009D036B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A657478024CF3EF1009D036B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A657478324CF3EF1009D036B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,13 +85,12 @@
 		A657477624CF3EEE009D036B /* drawl */ = {
 			isa = PBXGroup;
 			children = (
+				A65747A424D08EC4009D036B /* Controllers */,
+				A65747A324D08EBD009D036B /* Views */,
+				A65747A224D08EB4009D036B /* Helpers */,
+				A65747A124D08EAA009D036B /* Caches */,
 				A657477724CF3EEE009D036B /* AppDelegate.swift */,
-				A657479924CF3FDC009D036B /* SketchPadViewController.swift */,
-				A657479B24CF3FF1009D036B /* DrawingListTableViewController.swift */,
-				A657479D24CF425E009D036B /* Helpers.swift */,
-				A657479F24CF43DC009D036B /* DrawingView.swift */,
 				A657477924CF3EEE009D036B /* SceneDelegate.swift */,
-				A657477B24CF3EEE009D036B /* ViewController.swift */,
 				A657477D24CF3EEE009D036B /* Main.storyboard */,
 				A657478024CF3EF1009D036B /* Assets.xcassets */,
 				A657478224CF3EF1009D036B /* LaunchScreen.storyboard */,
@@ -109,6 +106,38 @@
 				A657479024CF3EF1009D036B /* Info.plist */,
 			);
 			path = drawlTests;
+			sourceTree = "<group>";
+		};
+		A65747A124D08EAA009D036B /* Caches */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Caches;
+			sourceTree = "<group>";
+		};
+		A65747A224D08EB4009D036B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A657479D24CF425E009D036B /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A65747A324D08EBD009D036B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A657479F24CF43DC009D036B /* DrawingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A65747A424D08EC4009D036B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A657479924CF3FDC009D036B /* SketchPadViewController.swift */,
+				A657479B24CF3FF1009D036B /* DrawingListTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +244,6 @@
 				A657479C24CF3FF1009D036B /* DrawingListTableViewController.swift in Sources */,
 				A657479E24CF425E009D036B /* Helpers.swift in Sources */,
 				A65747A024CF43DC009D036B /* DrawingView.swift in Sources */,
-				A657477C24CF3EEE009D036B /* ViewController.swift in Sources */,
 				A657477824CF3EEE009D036B /* AppDelegate.swift in Sources */,
 				A657479A24CF3FDC009D036B /* SketchPadViewController.swift in Sources */,
 				A657477A24CF3EEE009D036B /* SceneDelegate.swift in Sources */,
