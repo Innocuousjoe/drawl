@@ -2,6 +2,7 @@ protocol DrawingCacheProtocol: class {
     func getDrawings() -> [Drawing]
     func add(drawing: Drawing)
     func drawingCount() -> Int
+    func remove(drawing: Drawing) -> [Drawing]
 }
 
 class DrawingCache: DrawingCacheProtocol {
@@ -19,5 +20,13 @@ class DrawingCache: DrawingCacheProtocol {
     
     func drawingCount() -> Int {
         return drawings.count
+    }
+    
+    func remove(drawing: Drawing) -> [Drawing] {
+        drawings = drawings.filter { (internalDrawing) -> Bool in
+            internalDrawing != drawing
+        }
+        
+        return drawings
     }
 }
