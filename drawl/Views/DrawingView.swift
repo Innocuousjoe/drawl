@@ -3,9 +3,9 @@ import UIKit
 class DrawingView: UIView {
     var strokeColor: CGColor = UIColor.black.cgColor
     var strokeSize: CGFloat = 5
-    var startTime: Date!
+    var startTime: Date?
     
-    private var lineArray: [[(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]] = [[(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]]()
+    var lineArray: [[(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]] = [[(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]]()
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
@@ -69,8 +69,10 @@ class DrawingView: UIView {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        if let image = image {
-            return (startTime: startTime, image: image, lineArray: lineArray)
+        if let image = image, let startTime = startTime {
+            let tuple = (startTime: startTime, image: image, lineArray: lineArray)
+            self.startTime = nil
+            return tuple
         } else {
             return nil
         }

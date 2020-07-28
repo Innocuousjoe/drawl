@@ -20,6 +20,7 @@
 		A65747A624D08EEB009D036B /* DrawingCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65747A524D08EEB009D036B /* DrawingCache.swift */; };
 		A65747A924D08F01009D036B /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65747A824D08F01009D036B /* Drawing.swift */; };
 		A6CFAB4424D09C2F0073F539 /* DrawingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFAB4324D09C2F0073F539 /* DrawingCell.swift */; };
+		A6CFAB4A24D0AA670073F539 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFAB4924D0AA670073F539 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		A65747A524D08EEB009D036B /* DrawingCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCache.swift; sourceTree = "<group>"; };
 		A65747A824D08F01009D036B /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		A6CFAB4324D09C2F0073F539 /* DrawingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCell.swift; sourceTree = "<group>"; };
+		A6CFAB4924D0AA670073F539 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				A657479924CF3FDC009D036B /* SketchPadViewController.swift */,
 				A657479B24CF3FF1009D036B /* DrawingListTableViewController.swift */,
+				A6CFAB4924D0AA670073F539 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				A657479C24CF3FF1009D036B /* DrawingListTableViewController.swift in Sources */,
 				A657479E24CF425E009D036B /* Helpers.swift in Sources */,
 				A65747A024CF43DC009D036B /* DrawingView.swift in Sources */,
+				A6CFAB4A24D0AA670073F539 /* TabBarController.swift in Sources */,
 				A657477824CF3EEE009D036B /* AppDelegate.swift in Sources */,
 				A6CFAB4424D09C2F0073F539 /* DrawingCell.swift in Sources */,
 				A657479A24CF3FDC009D036B /* SketchPadViewController.swift in Sources */,

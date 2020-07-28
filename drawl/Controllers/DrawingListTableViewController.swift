@@ -4,6 +4,7 @@ class DrawingListTableViewController: UITableViewController {
     
     let drawingCache = DrawingCache.shared
     var drawings: [Drawing] = [Drawing]()
+    var tabBarDelegate: TabBarControllerDelegate?
     
     //MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -31,5 +32,12 @@ class DrawingListTableViewController: UITableViewController {
         }
         
         return UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let delegate = tabBarDelegate {
+            let drawing = drawings[indexPath.row]
+            delegate.redraw(with: drawing.lineArray)
+        }
     }
 }

@@ -10,7 +10,6 @@ class SketchPadViewController: UIViewController {
     @IBOutlet weak var brushSizeLabel: UILabel!
     @IBOutlet weak var eraserButton: UIButton!
     
-    private var lineArray: [[CGPoint]] = [[CGPoint]]()
     private var selectedColor: CGColor = UIColor.black.cgColor
     
     //MARK: Lifecycle
@@ -83,6 +82,30 @@ class SketchPadViewController: UIViewController {
     }
     
     //MARK: Helpers
+    func redraw(with lineArray: [[(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]]) {
+        let reduced = lineArray.reduce([], +)
+        let increment: Float = 1.0 / Float(reduced.count)
+        let interval = TimeInterval(exactly: increment)
+        var index = 0
+        var overIndex = 0
+        Timer.scheduledTimer(withTimeInterval: interval!, repeats: true) { (timer) in
+            if overIndex < lineArray.count, index != lineArray[overIndex].count {
+                if self.drawingView.lineArray.count <= overIndex {
+                    self.drawingView.lineArray.append([(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]())
+                }
+                
+                self.drawingView.lineArray[overIndex].append(lineArray[overIndex][index])
+                self.drawingView.setNeedsDisplay()
+                index += 1
+            } else if overIndex < lineArray.count {
+                index = 0
+                overIndex += 1
+            } else {
+                timer.invalidate()
+            }
+        }
+    }
+    
     private func styleView() {
         dockView.addTopBorder(with: UIColor.black, andWidth: 1)
         

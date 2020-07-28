@@ -240,7 +240,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="nzk-8j-19b">
             <objects>
-                <tabBarController id="Fnd-8Z-fjR" sceneMemberID="viewController">
+                <tabBarController id="Fnd-8Z-fjR" customClass="TabBarController" customModule="drawl" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AXb-h2-RIr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
