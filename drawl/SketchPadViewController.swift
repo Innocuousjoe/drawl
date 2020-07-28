@@ -11,12 +11,14 @@ class SketchPadViewController: UIViewController {
     private var lineArray: [[CGPoint]] = [[CGPoint]]()
     private var selectedColor: CGColor = UIColor.black.cgColor
     
+    //MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         styleView()
     }
     
+    //MARK: IBActions
     @IBAction func colorSelected(_ sender: UIButton) {
         if let backgroundColor = sender.backgroundColor {
             eraserButton.setBackgroundImage(UIImage(named: "unchecked"), for: .normal)
@@ -62,6 +64,15 @@ class SketchPadViewController: UIViewController {
         }
     }
     
+    @IBAction func save(_ sender: Any) {
+        
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+        drawingView.resetDrawing()
+    }
+    
+    //MARK: Touches
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let firstPoint = touch.location(in: drawingView)
@@ -78,6 +89,7 @@ class SketchPadViewController: UIViewController {
         drawingView.setNeedsDisplay()
     }
     
+    //MARK: Helpers
     private func styleView() {
         dockView.addTopBorder(with: UIColor.black, andWidth: 1)
         

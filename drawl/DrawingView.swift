@@ -52,4 +52,21 @@ class DrawingView: UIView {
     func setStrokeSize(newSize: CGFloat) {
         self.strokeSize = newSize
     }
+    
+    func resetDrawing() {
+        lineArray = []
+        setNeedsDisplay()
+    }
+
+    func exportDrawing() -> UIImage? {
+        UIGraphicsBeginImageContext(frame.size)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        
+        draw(inContext: context)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
 }
