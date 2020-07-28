@@ -19,6 +19,7 @@ class SketchPadViewController: UIViewController {
     
     @IBAction func colorSelected(_ sender: UIButton) {
         if let backgroundColor = sender.backgroundColor {
+            eraserButton.setBackgroundImage(UIImage(named: "unchecked"), for: .normal)
             selectedColor = backgroundColor.cgColor
             
             switch backgroundColor.cgColor {
