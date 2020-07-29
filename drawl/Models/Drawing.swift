@@ -6,10 +6,6 @@ struct Drawing {
     let creationDate: Date
     let interval: DateInterval
     let lineArray: [[(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]]
-    
-    static func primaryKey() -> String? {
-        return "id"
-    }
 }
 
 extension Drawing: Equatable {

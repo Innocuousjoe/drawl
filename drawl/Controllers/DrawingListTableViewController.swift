@@ -61,7 +61,15 @@ class DrawingListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            drawings = drawingCache.remove(drawing: drawings[indexPath.row])
+            let drawing = drawings[indexPath.row]
+            drawings = drawingCache.remove(drawing: drawing)
+            let realm = try! Realm()
+            
+            let serialDrawing = SerialDrawing.init(drawing)
+            try! realm.write {
+                realm.delete(serialDrawing)
+            }
+            
             tableView.reloadData()
         }
     }

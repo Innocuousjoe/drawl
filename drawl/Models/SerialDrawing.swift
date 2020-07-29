@@ -18,6 +18,10 @@ struct SerialDrawing: Realmable {
     var intervalEnd: Date
     var lineArray: [SerialPoint]
     
+    static func primaryKey() -> String? {
+        return "id"
+    }
+    
     init(_ drawing: Drawing) {
         self.id = drawing.id
         self.thumbnail = drawing.thumbnail.pngData()!
