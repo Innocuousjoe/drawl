@@ -85,6 +85,10 @@ class SketchPadViewController: UIViewController {
     }
     
     @IBAction func reset(_ sender: Any) {
+        brushSizeSlider.value = 5
+        brushSizeLabel.text = "\(5)"
+        drawingView.setStrokeSize(newSize: 5.0)
+        drawingView.setColor(newColor: UIColor.black.cgColor)
         drawingView.resetDrawing()
     }
     
