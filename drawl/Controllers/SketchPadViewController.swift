@@ -84,7 +84,7 @@ class SketchPadViewController: UIViewController {
         }
     }
     
-    @IBAction func reset(_ sender: Any) {
+    @IBAction func reset() {
         brushSizeSlider.value = 5
         brushSizeLabel.text = "\(5)"
         drawingView.setStrokeSize(newSize: 5.0)
@@ -94,6 +94,7 @@ class SketchPadViewController: UIViewController {
     
     //MARK: Helpers
     func redraw(with lineArray: [[(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]]) {
+        reset()
         let reduced = lineArray.reduce([], +)
         let increment: Float = 1.0 / Float(reduced.count)
         let interval = TimeInterval(exactly: increment)

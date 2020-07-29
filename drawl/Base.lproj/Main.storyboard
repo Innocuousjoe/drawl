@@ -157,7 +157,7 @@
                                         </constraints>
                                         <state key="normal" title="Reset"/>
                                         <connections>
-                                            <action selector="reset:" destination="Mcb-Ag-vR1" eventType="touchUpInside" id="lSm-bG-IxL"/>
+                                            <action selector="reset" destination="Mcb-Ag-vR1" eventType="touchUpInside" id="wkC-S6-hqf"/>
                                         </connections>
                                     </button>
                                 </subviews>
