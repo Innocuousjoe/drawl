@@ -1,10 +1,15 @@
 import UIKit
 
 struct Drawing {
+    let id: String = UUID().uuidString
     let thumbnail: UIImage
     let creationDate: Date
     let interval: DateInterval
     let lineArray: [[(point: CGPoint, strokeColor: CGColor, strokeSize: CGFloat)]]
+    
+    static func primaryKey() -> String? {
+        return "id"
+    }
 }
 
 extension Drawing: Equatable {

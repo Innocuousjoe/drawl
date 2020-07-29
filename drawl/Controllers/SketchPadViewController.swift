@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 class SketchPadViewController: UIViewController {
     
@@ -74,6 +75,12 @@ class SketchPadViewController: UIViewController {
             
             drawingCache.add(drawing: drawing)
             drawingView.resetDrawing()
+            
+            let realm = try! Realm()
+            let serialDrawing = SerialDrawing.init(drawing)
+            try! realm.write {
+                realm.add(serialDrawing)
+            }
         }
     }
     
