@@ -1,7 +1,7 @@
 import UIKit
 
 struct Drawing {
-    let id: String = UUID().uuidString
+    var id: String = UUID().uuidString
     let thumbnail: UIImage
     let creationDate: Date
     let interval: DateInterval

@@ -1,6 +1,16 @@
 import UIKit
+import RealmSwift
+
+extension Results {
+    func toArray<T>(ofType: T.Type) -> [T] {
+        let array = Array(self) as! [T]
+        return array
+    }
+}
 
 class DrawingListTableViewController: UITableViewController {
+    
+    let drawingDeserializer: DrawingDeserializerProtocol = DrawingDeserializer()
     
     let drawingCache = DrawingCache.shared
     var drawings: [Drawing] = [Drawing]()
@@ -9,6 +19,10 @@ class DrawingListTableViewController: UITableViewController {
     //MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let realm = try! Realm()
+        let dbDrawings = realm.objects(SerialDrawing.self)
+        drawingDeserializer.deserialize(serialDrawings: Array(dbDrawings))
         
         drawings = drawingCache.getDrawings()
         tableView.reloadData()

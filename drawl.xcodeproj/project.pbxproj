@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		12F65B53F877180C6862D8CD /* Pods_drawl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C5A8880FBC7CDC4FE6671 /* Pods_drawl.framework */; };
 		A653E72224D1DC3600C790B4 /* SerialDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653E72124D1DC3600C790B4 /* SerialDrawing.swift */; };
+		A653E72524D1E86700C790B4 /* DrawingDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653E72424D1E86700C790B4 /* DrawingDeserializer.swift */; };
 		A657477824CF3EEE009D036B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657477724CF3EEE009D036B /* AppDelegate.swift */; };
 		A657477A24CF3EEE009D036B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657477924CF3EEE009D036B /* SceneDelegate.swift */; };
 		A657477F24CF3EEE009D036B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A657477D24CF3EEE009D036B /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		6B1C5A8880FBC7CDC4FE6671 /* Pods_drawl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_drawl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F2AD4CEDF1450E701441BF /* Pods-drawl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drawl.release.xcconfig"; path = "Target Support Files/Pods-drawl/Pods-drawl.release.xcconfig"; sourceTree = "<group>"; };
 		A653E72124D1DC3600C790B4 /* SerialDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialDrawing.swift; sourceTree = "<group>"; };
+		A653E72424D1E86700C790B4 /* DrawingDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingDeserializer.swift; sourceTree = "<group>"; };
 		A657477424CF3EEE009D036B /* drawl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657477724CF3EEE009D036B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A657477924CF3EEE009D036B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A653E72324D1E85700C790B4 /* Deserializers */ = {
+			isa = PBXGroup;
+			children = (
+				A653E72424D1E86700C790B4 /* DrawingDeserializer.swift */,
+			);
+			path = Deserializers;
+			sourceTree = "<group>";
+		};
 		A657476B24CF3EEE009D036B = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		A657477624CF3EEE009D036B /* drawl */ = {
 			isa = PBXGroup;
 			children = (
+				A653E72324D1E85700C790B4 /* Deserializers */,
 				A6CFAB4224D09C240073F539 /* Cells */,
 				A65747A724D08EFC009D036B /* Models */,
 				A65747A424D08EC4009D036B /* Controllers */,
@@ -387,6 +398,7 @@
 				A657479C24CF3FF1009D036B /* DrawingListTableViewController.swift in Sources */,
 				A657479E24CF425E009D036B /* Helpers.swift in Sources */,
 				A65747A024CF43DC009D036B /* DrawingView.swift in Sources */,
+				A653E72524D1E86700C790B4 /* DrawingDeserializer.swift in Sources */,
 				A6CFAB4A24D0AA670073F539 /* TabBarController.swift in Sources */,
 				A657477824CF3EEE009D036B /* AppDelegate.swift in Sources */,
 				A653E72224D1DC3600C790B4 /* SerialDrawing.swift in Sources */,

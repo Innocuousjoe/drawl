@@ -32,7 +32,26 @@ struct SerialDrawing: Realmable {
                 newSerialPoint.x = Float(tuple.point.x)
                 newSerialPoint.y = Float(tuple.point.y)
                 newSerialPoint.strokeSize = Float(tuple.strokeSize)
-                newSerialPoint.strokeColor = "\(tuple.strokeColor)"
+                
+                switch tuple.strokeColor {
+                case UIColor.systemPurple.cgColor:
+                    newSerialPoint.strokeColor = "purple"
+                case UIColor.systemRed.cgColor:
+                    newSerialPoint.strokeColor = "red"
+                case UIColor.systemOrange.cgColor:
+                    newSerialPoint.strokeColor = "orange"
+                case UIColor.systemYellow.cgColor:
+                    newSerialPoint.strokeColor = "yellow"
+                case UIColor.systemGreen.cgColor:
+                    newSerialPoint.strokeColor = "green"
+                case UIColor.systemBlue.cgColor:
+                    newSerialPoint.strokeColor = "blue"
+                case UIColor.black.cgColor:
+                    newSerialPoint.strokeColor = "black"
+                default:
+                    newSerialPoint.strokeColor = "black"
+                }
+                
                 newSerialPoint.index = index
                 
                 self.lineArray.append(newSerialPoint)

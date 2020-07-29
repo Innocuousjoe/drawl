@@ -15,7 +15,11 @@ class DrawingCache: DrawingCacheProtocol {
     }
     
     func add(drawing: Drawing) {
-        drawings.append(drawing)
+        if !drawings.contains(where: { (insideDrawing) -> Bool in
+            insideDrawing.id == drawing.id
+        }) {
+            drawings.append(drawing)
+        }
     }
     
     func drawingCount() -> Int {
