@@ -25,26 +25,31 @@ struct SerialDrawing: Realmable {
         self.intervalStart = drawing.interval.start
         self.intervalEnd = drawing.interval.end
         self.lineArray = [SerialPoint]()
-        let flat = drawing.lineArray.reduce([], +)
-        for tuple in flat {
-            var newSerialPoint = SerialPoint()
-            newSerialPoint.x = Float(tuple.point.x)
-            newSerialPoint.y = Float(tuple.point.y)
-            newSerialPoint.strokeSize = Float(tuple.strokeSize)
-            newSerialPoint.strokeColor = "\(tuple.strokeColor)"
-            
-            self.lineArray.append(newSerialPoint)
+        
+        for (index, subArray) in drawing.lineArray.enumerated() {
+            for tuple in subArray {
+                var newSerialPoint = SerialPoint()
+                newSerialPoint.x = Float(tuple.point.x)
+                newSerialPoint.y = Float(tuple.point.y)
+                newSerialPoint.strokeSize = Float(tuple.strokeSize)
+                newSerialPoint.strokeColor = "\(tuple.strokeColor)"
+                newSerialPoint.index = index
+                
+                self.lineArray.append(newSerialPoint)
+            }
         }
     }
 }
 
 struct SerialPoint: Realmable {
+    var index: Int
     var x: Float
     var y: Float
     var strokeColor: String
     var strokeSize: Float
     
     init() {
+        self.index = 0
         self.x = 0
         self.y = 0
         self.strokeColor = ""
