@@ -6,6 +6,7 @@ target 'drawl' do
   use_frameworks!
 
   pod 'RealmSwift'
+  pod 'Unrealm'
   # Pods for drawl
 
   target 'drawlTests' do
